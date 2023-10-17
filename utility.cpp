@@ -2,7 +2,7 @@
  * utility.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Anzhu Ling
+ * Anzhu Ling, Mason
  * anzhul
  *
  * EECS 183: Project 3
@@ -15,14 +15,8 @@
 #include <iostream>
 #include <string>
 
-/*
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  Returns a copy of original string with all alphabetical
- *           characters converted to uppercase. All other characters (numbers,
- *           symbols, spaces, punctuation marks, etc.) are unchanged.
- */
-string toUpperCase(string original) {
+//Shifts a character by n, wraps if necessary.
+string toUpperCase(string original){
     for (int i = 0; i < original.length(); i++) {
         if (original[i] >= 'a' && original[i] <= 'z') {
             original[i] = (original[i] - 'a') + 'A';
@@ -31,16 +25,8 @@ string toUpperCase(string original) {
     return original;
 }
 
-/*
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  Returns a copy of original string with all non-alphabetical
- *           characters (numbers, symbols, spaces, punctuation marks, etc.)
- *           removed.
- *
- *           Example: "EECS 183!" -> "EECS"
- */
-string removeNonAlphas(string original) {
+//Strips non-alpha characters from string.
+string removeNonAlphas(string original){
     string a = "";
     for (int i = 0; i < original.length(); i++) {
         if (original[i] >= 'A' && original[i] <= 'Z' 
@@ -51,15 +37,8 @@ string removeNonAlphas(string original) {
     return a;
 }
 
-/*
- * Requires: original contains only uppercase alphabet and/or digits from 0 to 9
- * Modifies: Nothing.
- * Effects:  Returns a copy of original string with duplicate characters except
- *           for the first occurence removed.
- *
- *           Example: "AABBCAB" -> "ABC"
- */
-string removeDuplicate(string original) {
+//Removes duplicate chars from string.
+string removeDuplicate(string original){
     for (int i = 0; i < original.length(); i++) {
         for (int j = i + 1; j < original.length(); j++) {
             if (original[i] == original[j]) {
@@ -73,29 +52,14 @@ string removeDuplicate(string original) {
     return original;
 }
 
-/*
- * Requires: original is a character representing a number from 0 to 9.
- * Modifies: Nothing.
- * Effects:  Returns the integer representation of the correspondiong character.
- *
- *     Example: charToInt('1') returns the integer 1
- */
-int charToInt(char original) {
+//Turns a char into a int.
+int charToInt(char original){
     int a = 0;
     if (original >= '0' && original <= '9') {
         a = original - '0';
         return a;
     }
 }
-
-/*int main(){
-    cout << removeDuplicate("AABBCABLL000000") << endl;
-    cout << toUpperCase("abcde") << endl;
-    cout << removeNonAlphas("a65!cDE 7-u") << endl;
-    cout << charToInt('1');
-    cout << charToInt('4');
-    return 0;
-}*/
 
 ////////////////////////////////////////////////////////////////////////////////
 // Do not touch code below. ////////////////////////////////////////////////////

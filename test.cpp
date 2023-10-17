@@ -2,6 +2,7 @@
 #include "caesar.h"
 #include "vigenere.h"
 #include "polybius.h"
+#include "test.h"
 #include <iostream>
 
 void startTests(){

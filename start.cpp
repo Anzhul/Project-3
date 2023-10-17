@@ -13,6 +13,7 @@
 #include <iostream>
 #include <string>
 #include "test.h"
+#include "ciphers.h"
 
 
 using namespace std;
@@ -43,7 +44,7 @@ int main() {
         startTests();
     }
     else if (choice == 2) {
-        //ciphers();
+        ciphers();
     }
     
     return 0;

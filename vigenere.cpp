@@ -2,7 +2,7 @@
  * vigenere.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Anzhu Ling
+ * Anzhu Ling, Mason
  * anzhul
  *
  * EECS 183: Project 3
@@ -16,7 +16,8 @@
 #include "vigenere.h"
 #include <iostream>
 
-
+//Shifts a string by a keyword.
+//Shifts backwards if encrypt is false. 
 string vigenereCipher(string original, string keyword, bool encrypt){
     string key = "";
     int j = 0;
@@ -43,14 +44,4 @@ string vigenereCipher(string original, string keyword, bool encrypt){
         }
         return original;
     }
-    //string encrypted = "";
 }
-
-/*int main(){
-    //cout << -23%5 << endl;
-    cout << vigenereCipher("Meet me at the Diag at 11 p.m.", "Squirrel!", true) << endl;
-    cout << vigenereCipher("Euyb dv ee lxy Lzrk ll 11 f.g.", "Squirrel!", false) << endl;
-    cout << vigenereCipher("Right as you are", "aflekwamflwam!", true) << endl;
-    cout << vigenereCipher("Rnrld ws ktf wrq", "aflekwamflwam!", false) << endl;
-    return 0;
-}*/

@@ -2,7 +2,7 @@
  * caesar.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Anzhu Ling
+ * Anzhu Ling, Mason
  * anzhul
  *
  * EECS 183: Project 3
@@ -14,45 +14,33 @@
 #include "caesar.h"
 #include <iostream>
 
-/*
- * Requires: c is an alphabetical character.
- * Modifies: Nothing.
- * Effects:  Returns c shifted by n characters.
- *           If c is lowercase, it will remain lowercase.
- *           If c is uppercase, it will remain uppercase.
- * Used in:  caesarCipher.
- */
+
+//Shifts a character by n, wraps if necessary.
 char shiftAlphaCharacter(char c, int n){
         if (isalpha(c)){
                 if (islower(c)){
                     if ((c - 'a' + n) < 0){
-                        c = ('z' + (c-'a' + n) % 26) + 1;
+                        c = ('z' + (c-'a' + n + 1) % 26);
                     }
                     else{
                         //(difference of original + shift)remainder + base
                         c = (c - 'a' + n) % 26 + 'a';
                     }
-
                 }
                 else if (isupper(c)){
                     if ((c - 'A' + n) < 0){
-                        c = ('Z' + (c-'A' + n) % 26) + 1;
+                        c = ('Z' + (c-'A' + n + 1) % 26);
                     }
                     else{
                         c = (c - 'A' + n) % 26 + 'A';
                     }
+                    return c;
                 }
         }
         return c;
 }
 
-/*
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  If encrypt is true, returns string encrypted with Caesar cipher
- *           using key. If encrypt is false, returns string decrypted with
- *           Caesar cipher using key.
- */
+//Encrypts or decrypts a string by shifting it by key amount.
 string caesarCipher(string original, int key, bool encrypt){
     if (encrypt){
         string encrypted = "";
@@ -61,19 +49,12 @@ string caesarCipher(string original, int key, bool encrypt){
             encrypted += shiftAlphaCharacter(original[i], key);
         }
         return encrypted;
-    }else{
+    }
+    else{
         string decrypted = "";
         for (int i = 0; i < original.length(); i++){
             decrypted += shiftAlphaCharacter(original[i], -key);
         }
-        return original;
+        return decrypted;
     }
 }
-
-/*int main(){
-    cout << caesarCipher("Meet me at the Diag at 11 p.m.", 42, true) << endl;
-    cout << caesarCipher("Meet me at the Diag at 11 p.m.", 42, false) << endl;
-    cout << caesarCipher("abcde", 50, true) << endl;
-    cout << caesarCipher("abcde", 2, true) << endl;
-    return 0;
-}*/
