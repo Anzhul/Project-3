@@ -2,8 +2,8 @@
  * caesar.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Anzhu Ling, Mason
- * anzhul
+ * Anzhu Ling, Songhan Wu
+ * anzhul, wuumaa
  *
  * EECS 183: Project 3
  * Fall 2023
@@ -20,6 +20,7 @@ char shiftAlphaCharacter(char c, int n){
         if (isalpha(c)){
                 if (islower(c)){
                     if ((c - 'a' + n) < 0){
+                        //For some reason needs an additional 1 to work
                         c = ('z' + (c-'a' + n + 1) % 26);
                     }
                     else{

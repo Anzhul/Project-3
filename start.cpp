@@ -23,29 +23,9 @@ using namespace std;
 //************************************************************************
 //void ciphers();
 void startTests();
-
+/*
 int main() {
-    
-    cout << "-------------------------------" << endl
-         << "EECS 183 Project 3 Menu Options" << endl
-         << "-------------------------------" << endl;
-    cout << "1) Execute testing functions in test.cpp" << endl;
-    cout << "2) Execute ciphers() function to use ciphers" << endl;    
-    cout << "Choice --> ";
-
-    int choice;
-    cin >> choice;
-
-    // remove the retrun character from the cin stream buffer
-    string junk;
-    getline(cin, junk);
-
-    if (choice == 1) {
-        startTests();
-    }
-    else if (choice == 2) {
         ciphers();
-    }
-    
-    return 0;
+        
 }
+*/

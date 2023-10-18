@@ -2,8 +2,8 @@
  * utility.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Anzhu Ling, Mason
- * anzhul
+ * Anzhu Ling, Songhan Wu
+ * anzhul, wuumaa
  *
  * EECS 183: Project 3
  * Fall 2023

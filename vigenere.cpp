@@ -2,8 +2,8 @@
  * vigenere.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Anzhu Ling, Mason
- * anzhul
+ * Anzhu Ling, Songhan Wu
+ * anzhul, wuumaa
  *
  * EECS 183: Project 3
  * Fall 2023
@@ -29,6 +29,7 @@ string vigenereCipher(string original, string keyword, bool encrypt){
     if (encrypt){
         for (int i = 0; i < original.length(); i++){
             if (isalpha(original[i])){
+                //Shifts the character by the corresponding letter in the keyword.
                 original[i] = shiftAlphaCharacter(original[i], key[j%key.length()]-'A');
                 j++;
             }
@@ -38,6 +39,7 @@ string vigenereCipher(string original, string keyword, bool encrypt){
     else{
         for (int i = 0; i < original.length(); i++){
             if (isalpha(original[i])){
+                //Negative -(key[j%key.length()]-'A') to signify backwards shift.
                 original[i] = shiftAlphaCharacter(original[i], -(key[j%key.length()]-'A'));
                 j++;
             }
